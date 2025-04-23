@@ -1,2 +1,2 @@
-# ntaganda scurity gruop uganda
+# ntaganda scurity group uganda
 for security hiring in uganda
