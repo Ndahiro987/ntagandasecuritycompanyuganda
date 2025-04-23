@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Ntaganda Security Group Uganda</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004d80;
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.logo {
+            max-height: 150px; /* Increased logo size */
+            margin-bottom: 0.5em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #336699;
+            color: #fff;
+            padding: 0.8em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.7em 1.2em;
+            margin: 0 0.6em;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+            display: inline-flex; /* Make them flex containers */
+            align-items: center; /* Vertically align items */
+            justify-content: center; /* Center text/icon horizontally */
+        }
+        nav a:hover {
+            background-color: #558abb;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-buttons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-buttons li {
+            margin-left: 0.6em;
+        }
+        .nav-buttons a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.7em 1.2em;
+            margin: 0 0.6em;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent; /* Make background transparent initially */
+        }
+        .nav-buttons a:hover {
+            background-color: #558abb;
+        }
+        .whatsapp-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.7em 1.2em;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.6em;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #0056b3;
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5em;
+            fill: #fff; /* Optional: style the SVG icon */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .careers-section h2 {
+            color: #004d80;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .career-opportunity {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #d9d9d9;
+        }
+        .career-opportunity h3 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+        .career-opportunity p {
+            margin-bottom: 1em;
+        }
+        .apply-button {
+            display: inline-block;
+            background-color: #007bff; /* Changed to blue */
+            color: #fff;
+            padding: 0.7em 1.5em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .apply-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.2em 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.7em 1.2em;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #0056b3;
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5em;
+            fill: #fff; /* Optional: style the SVG icon */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo">
+        <h1>Ntaganda Security Group Uganda</h1>
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="careers.html" style="background-color: #007bff; color: #fff;">Careers</a></li>
+        </ul>
+        <ul class="nav-buttons">
+            <li>
+                <a href="https://wa.me/256762052069" class="whatsapp-button" target="_blank">
+                    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27.34 4.66a11.96 11.96 0 0 0-8.62-3.48c-6.58 0-11.9 5.32-11.9 11.9 0 2.09.52 4.08 1.45 5.84l-1.57 4.68 4.76-1.55c1.65.85 3.46 1.3 5.32 1.3 6.58 0 11.9-5.32 11.9-11.9a11.96 11.96 0 0 0-3.34-8.64zm-8.62 19.34c-1.88 0-3.68-.48-5.2-1.35l-.32-.19-3.18 1.04 1.06-3.12-.22-.34c-.94-1.5-1.44-3.2-1.44-5.06 0-5.46 4.44-9.9 9.9-9.9a9.9 9.9 0 0 1 6.9 2.9c1.9 1.9 2.96 4.44 2.96 6.9a9.9 9.9 0 0 1-2.9 6.9c-1.9 1.9-4.44 2.9-6.9 2.9zm5.34-6.52c-.32-.19-1.84-.94-2.12-1.04-.28-.1-.56-.16-.84-.16-.28 0-.56 0-.84.06-.28.06-.56.28-.84.56-.28.28-.56.56-.84.74-.28.19-.56.28-.84.28-.28 0-.56-.1-.84-.38-.28-.28-.56-.56-.74-.84-.19-.28-.06-.56.1-.84.16-.28.28-.56.62-.84.32-.28.44-.56.56-.84.1-.28.1-.56 0-.84-.1-.28-.44-.62-.68-.84-.28-.28-.56-.56-.84-.56-.28 0-.56.06-.84.06-.28 0-.56.16-.84.44-.28.28-.56.62-.74.84-.19.28-.44.56-.28.84.16.28.62 1.04.84 1.22.22.19 1.5.84 1.94 1.12.44.28.84.56 1.22.62.38.06.74.06 1.02-.1.28-.16.62-.38.84-.56.22-.19.44-.28.68-.28.22 0 .56.06.84.28.28.22.44.56.62.84.19.28.28.56.38.84.1.28.1.56.06.84-.06.28-.28.56-.56.74-.28.19-1.5.84-2.06 1.12z"/></svg>
+                    WhatsApp
+                </a>
+            </li>
+            <li><a href="login_signup.html" style="background-color: transparent;">Login/Sign Up</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section class="careers-section">
+            <h2>Join Our Team</h2>
+            <p>At Ntaganda Security Group Uganda, we are always looking for talented and dedicated individuals to join our team. If you are passionate about security and committed to excellence, we encourage you to explore the opportunities below.</p>
+
+            <div class="career-opportunity">
+                <h3>Security Guard</h3>
+                <p>We are seeking reliable and vigilant security guards to protect our clients' premises. Responsibilities include patrolling, monitoring surveillance equipment, and ensuring a safe environment.</p>
+                <p><strong>Requirements:</strong> High school diploma, clean criminal record, good physical condition, excellent communication skills.</p>
+                <a href="apply1.html" class="apply-button">Apply for Security Guard</a>
+            </div>
+
+            <div class="career-opportunity">
+                <h3>Site Supervisor</h3>
+                <p>We are looking for experienced site supervisors to oversee security operations at various client locations. Responsibilities include managing security teams, ensuring adherence to protocols, and client communication.</p>
+                <p><strong>Requirements:</strong> Proven experience in a supervisory role, strong leadership skills, excellent organizational abilities, security certifications preferred.</p>
+                <a href="apply2.html" class="apply-button">Apply for Site Supervisor</a>
+            </div>
+
+            <div class="career-opportunity">
+                <h3>Mobile Patrol Officer</h3>
+                <p>Join our mobile patrol team to conduct regular checks of client properties. You will be responsible for deterring threats and responding to incidents as needed.</p>
+                <p><strong>Requirements:</strong> Valid driver's license, security experience preferred, strong observational skills, ability to work independently.</p>
+                <a href="apply1.html" class="apply-button">Apply for Mobile Patrol Officer</a>
+            </div>
+
+            <div class="career-opportunity">
+                <h3>Surveillance System Technician</h3>
+                <p>We need skilled technicians to install, maintain, and repair our advanced surveillance systems. Knowledge of CCTV and access control systems is essential.</p>
+                <p><strong>Requirements:</strong> Technical diploma or relevant certification, experience with security systems, problem-solving skills.</p>
+                <a href="apply2.html" class="apply-button">Apply for Surveillance System Technician</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ntaganda Security Group Uganda. All rights reserved.</p>
+    </footer>
+</body>
+</html>

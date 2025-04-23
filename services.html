@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Ntaganda Security Group Uganda</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004d80;
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.logo {
+            max-height: 100px;
+            margin-bottom: 0.5em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #336699;
+            color: #fff;
+            padding: 0.8em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.7em 1.2em;
+            margin: 0 0.6em;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+            display: inline-flex; /* Make them flex containers */
+            align-items: center; /* Vertically align items */
+            justify-content: center; /* Center text/icon horizontally */
+        }
+        nav a:hover {
+            background-color: #558abb;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-buttons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-buttons li {
+            margin-left: 0.6em;
+        }
+        .nav-buttons a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.7em 1.2em;
+            margin: 0 0.6em;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent; /* Make background transparent initially */
+        }
+        .nav-buttons a:hover {
+            background-color: #558abb;
+        }
+        .whatsapp-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.7em 1.2em;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.6em;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #0056b3;
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5em;
+            fill: #fff; /* Optional: style the SVG icon */
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .feature-box {
+            background-color: #f9f9f9;
+            border: 1px solid #d9d9d9;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-box h2 {
+            font-size: 1.6em;
+            color: #004d80;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.3em;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .feature-list li {
+            padding: 0.6em 0;
+            color: #555;
+            position: relative;
+            padding-left: 1em; /* Adjusted padding */
+            display: flex;
+            align-items: center; /* Vertically align image and text */
+        }
+
+        .feature-list li::before {
+            content: ''; /* Removed the checkmark */
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-size: 1em;
+        }
+
+        .services-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 2.3em;
+            margin-bottom: 1.2em;
+            color: #004d80;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5em;
+            display: inline-block;
+        }
+
+        .detailed-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .detailed-service-box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: left; /* Align text within detailed boxes to the left */
+        }
+
+        .detailed-service-box h3 {
+            font-size: 1.5em;
+            color: #004d80;
+            margin-bottom: 0.8em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5em;
+        }
+
+        .detailed-service-box p {
+            color: #555;
+        }
+
+        .detailed-service-box img { /* Style images in detailed service boxes */
+            width: 80px; /* Increased image size */
+            height: 80px; /* Increased image size */
+            margin-right: 15px; /* Increased spacing */
+            vertical-align: middle;
+            float: left; /* Float images to the left of the text */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.2em 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo">
+        <h1>Ntaganda Security Group Uganda</h1>
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html" style="background-color: #007bff; color: #fff;">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <ul class="nav-buttons">
+            <li><a href="careers.html" style="background-color: transparent;">Careers</a></li>
+            <li><a href="payments.html" style="background-color: transparent;">Payments</a></li>
+            <li>
+                <a href="https://wa.me/256762052069" class="whatsapp-button" target="_blank">
+                    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27.34 4.66a11.96 11.96 0 0 0-8.62-3.48c-6.58 0-11.9 5.32-11.9 11.9 0 2.09.52 4.08 1.45 5.84l-1.57 4.68 4.76-1.55c1.65.85 3.46 1.3 5.32 1.3 6.58 0 11.9-5.32 11.9-11.9a11.96 11.96 0 0 0-3.34-8.64zm-8.62 19.34c-1.88 0-3.68-.48-5.2-1.35l-.32-.19-3.18 1.04 1.06-3.12-.22-.34c-.94-1.5-1.44-3.2-1.44-5.06 0-5.46 4.44-9.9 9.9-9.9a9.9 9.9 0 0 1 6.9 2.9c1.9 1.9 2.96 4.44 2.96 6.9a9.9 9.9 0 0 1-2.9 6.9c-1.9 1.9-4.44 2.9-6.9 2.9zm5.34-6.52c-.32-.19-1.84-.94-2.12-1.04-.28-.1-.56-.16-.84-.16-.28 0-.56 0-.84.06-.28.06-.56.28-.84.56-.28.28-.56.56-.84.74-.28.19-.56.28-.84.28-.28 0-.56-.1-.84-.38-.28-.28-.56-.56-.74-.84-.19-.28-.06-.56.1-.84.16-.28.28-.56.62-.84.32-.28.44-.56.56-.84.1-.28.1-.56 0-.84-.1-.28-.44-.62-.68-.84-.28-.28-.56-.56-.84-.56-.28 0-.56.06-.84.06-.28 0-.56.16-.84.44-.28.28-.56.62-.74.84-.19.28-.44.56-.28.84.16.28.62 1.04.84 1.22.22.19 1.5.84 1.94 1.12.44.28.84.56 1.22.62.38.06.74.06 1.02-.1.28-.16.62-.38.84-.56.22-.19.44-.28.68-.28.22 0 .56.06.84.28.28.22.44.56.62.84.19.28.28.56.38.84.1.28.1.56.06.84-.06.28-.28.56-.56.74-.28.19-1.5.84-2.06 1.12z"/></svg>
+                    WhatsApp
+                </a>
+            </li>
+            <li><a href="login_signup.html" style="background-color: transparent;">Login/Sign Up</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section class="feature-box">
+            <h2>Our Comprehensive Security Services</h2>
+            <ul class="feature-list">
+                <li>Highly trained and vetted security personnel</li>
+                <li>Proactive mobile patrol units</li>
+                <li>Advanced surveillance systems</li>
+                <li>Dedicated physical security teams</li>
+                <li>24/7 rapid emergency response</li>
+                <li>Effective canine security units</li>
+                <li>State-of-the-art alarm systems</li>
+                <li>Real-time GPS tracking solutions</li>
+                <li>Integrated facility security management</li>
+                <li>Strategic crisis management planning</li>
+                <li>Professional security consulting</li>
+                <li>Secure travel solutions and escorts</li>
+            </ul>
+        </section>
+        <section class="services-section">
+            <h2>Explore Our Detailed Services</h2>
+            <div class="detailed-services-grid">
+                <div class="detailed-service-box">
+                    <img src="guard.jpg" alt="Guard icon">
+                    <h3>Guarding Services</h3>
+                    <p>Our highly trained and rigorously vetted security personnel provide a visible and effective deterrent against potential threats. We tailor our guarding services to meet the specific needs of various premises, including commercial buildings, residential areas, industrial sites, and events. Our guards are equipped to handle diverse security challenges, ensuring the safety and security of your assets and personnel.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="patrol.jpg" alt="Patrol car icon">
+                    <h3>Mobile Patrols</h3>
+                    <p>Ntaganda Security Group offers proactive mobile patrol services designed to provide regular and unpredictable checks on your property. Our uniformed patrol officers conduct thorough inspections, deterring criminal activity and identifying potential security vulnerabilities. This service is ideal for covering large areas or multiple locations, ensuring comprehensive security coverage and rapid response when needed.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="camera.jpg" alt="CCTV icon">
+                    <h3>Surveillance Systems</h3>
+                    <p>We specialize in the installation and maintenance of advanced surveillance systems, including CCTV cameras and access control solutions. Our expert technicians design and implement customized systems that provide comprehensive monitoring.</p>
+                </div>
+                <div class="detailed-service-box">
+                    <img src="physcal.jpg" alt="Shield icon">
+                    <h3>Physical Security</h3>
+                    <p>Our on-site physical security personnel are the backbone of our security services. Professionally trained and equipped to handle a wide range of security situations, our guards are dedicated to safeguarding your assets, employees, and visitors. We emphasize proactive security measures, including access control, perimeter security, and incident response, to create a safe and secure environment.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="response.jpg" alt="Emergency siren icon">
+                    <h3>Emergency Response</h3>
+                    <p>Ntaganda Security Group maintains highly trained and readily deployable emergency response teams available 24/7. In the event of a security breach, alarm</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="dog.jpg" alt="Dog icon">
+                    <h3>Canine Security</h3>
+                    <p>For enhanced threat detection and specialized security needs, we offer highly trained canine security units. Our skilled handlers and their expertly trained dogs provide an additional layer of security for various applications, including perimeter control, detection of explosives or narcotics, and crowd management. Canine units are a powerful asset in deterring criminal activity and providing a heightened sense of security.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="alarm.jpg" alt="Alarm bell icon">
+                    <h3>Alarms & Security Systems</h3>
+                    <p>We provide comprehensive alarm systems and a wide range of advanced security equipment to protect your property. Our solutions include intruder alarms, fire alarms, panic buttons, and integrated security management systems. Our team of experts will assess your specific needs and recommend and install the most effective alarm and security products to safeguard your premises and assets.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="track.jpg" alt="GPS icon">
+                    <h3>Tracking Services</h3>
+                    <p>Ntaganda Security Group offers state-of-the-art GPS tracking solutions for vehicles, valuable assets, and personnel. Our tracking services provide real-time location monitoring, geofencing capabilities, and detailed reporting, enabling you to enhance security, improve operational efficiency, and recover assets in case of theft or loss. Our user-friendly tracking platforms offer easy access to critical information anytime, anywhere.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="event.jpg" alt="Building icon">
+                    <h3>Facilities Security Management</h3>
+                    <p>We provide comprehensive security management services for commercial and residential facilities. Our integrated approach ensures that all aspects of security are addressed, from access control and visitor management to surveillance and emergency preparedness. We work closely with facility managers to develop and implement tailored security plans that create a safe and secure environment for occupants and assets.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="crisis.jpg" alt="Warning sign icon">
+                    <h3>Crisis Management & Planning</h3>
+                    <p>Ntaganda Security Group offers expert crisis management strategies and implementation to help organizations prepare for and respond to security-related incidents and emergencies. Our experienced consultants work with you to develop robust crisis management plans, conduct training exercises, and provide on-the-ground support during critical situations. Our goal is to minimize the impact of crises and ensure business continuity.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="security.jpg" alt="Briefcase icon">
+                    <h3>Security Consulting Services</h3>
+                    <p>Our professional security consulting services provide thorough security risk assessments, vulnerability analyses, and strategic security planning. Our experienced consultants evaluate your current security measures, identify potential weaknesses, and recommend customized solutions to enhance your overall security posture. We offer expert advice on a wide range of security topics, helping you make informed decisions to protect your assets and interests.</p>
+                </div>
+                <div class="detailed-service-box">
+                     <img src="travel.jpg" alt="Car with person icon">
+                    <h3>Secure Travel & Escort Services</h3>
+                    <p>Ntaganda Security Group understands the unique security challenges faced by travelers. We offer dedicated travel security services, including security escorts, journey risk assessments, and close protection services to ensure the safety and well-being of individuals traveling for business or leisure. Our discreet and professional travel security personnel provide peace of mind, allowing you to focus on your travel objectives.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ntaganda Security Group Uganda. All rights reserved.</p>
+    </footer>
+</body>
+</html>

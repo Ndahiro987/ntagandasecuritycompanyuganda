@@ -1,0 +1,257 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Job Application - Ntaganda Security Group Uganda</title> 
+    <style> 
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background-color: #f4f4f4; 
+            color: #333; 
+            padding-top: 110px; /* Adjust for header height */ 
+        } 
+        header { 
+            background-color: #004d80; 
+            color: #fff; 
+            padding: 1em 20px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            z-index: 100; 
+            display: flex; 
+            flex-direction: column; /* Stack logo and title */ 
+            align-items: center; /* Center items horizontally */ 
+            justify-content: center; /* Center items vertically within header */ 
+        } 
+        .header-left, .header-right { 
+            display: flex; 
+            align-items: center; 
+        } 
+        header img.logo { 
+            max-height: 120px; /* More visible logo size */ 
+            margin-bottom: 0; /* Remove space below logo */ 
+        } 
+        header h1 { 
+            display: none; /* Remove the "Job Application" text */ 
+        } 
+        .header-right { 
+            display: flex; 
+            gap: 15px; /* Space between buttons */ 
+            margin-top: 10px; /* Space below logo and above buttons */ 
+        } 
+        .header-right button { 
+            background-color: #336699; 
+            color: #fff; 
+            border: none; 
+            padding: 0.8em 1.2em; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 1em; 
+            transition: background-color 0.3s ease; 
+        } 
+        .header-right button:hover { 
+            background-color: #558abb; 
+        } 
+        .container { 
+            background-color: #fff; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            max-width: 600px; 
+            margin: 20px auto; 
+        } 
+        h2 { 
+            color: #004d80; 
+            text-align: center; 
+            margin-bottom: 20px; 
+        } 
+        .form-group { 
+            margin-bottom: 15px; 
+        } 
+        label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: bold; 
+            color: #555; 
+        } 
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"], 
+        input[type="file"], 
+        textarea, 
+        select { 
+            width: calc(100% - 22px); 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            margin-bottom: 5px; 
+        } 
+        select { 
+            appearance: none; 
+            background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>'); 
+            background-repeat: no-repeat; 
+            background-position-x: 97%; 
+            background-position-y: center; 
+            padding-right: 30px; 
+        } 
+        button[type="submit"] { 
+            background-color: #28a745; /* Green submit button */ 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 1em; 
+            transition: background-color 0.3s ease; 
+        } 
+        button[type="submit"]:hover { 
+            background-color: #1e7e34; 
+        } 
+        .links { 
+            margin-top: 20px; 
+            text-align: center; 
+        } 
+        .links a { 
+            margin: 0 10px; 
+            color: #007bff; 
+            text-decoration: none; 
+        } 
+        .links a:hover { 
+            text-decoration: underline; 
+        } 
+        .error-message { 
+            color: red; 
+            font-size: 0.9em; 
+            margin-top: 5px; 
+        } 
+        .success-message { 
+            color: green; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-top: 20px; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo"> 
+        <h1 style="display: none;">Job Application</h1> 
+        <div class="header-right"> 
+            <button onclick="window.location.href='index.html'">Home</button> 
+            <button onclick="window.location.href='careers.html'">Careers</button> 
+            <button onclick="window.location.href='contact.html'">Contact Us</button> 
+        </div> 
+    </header> 
+    <div class="container"> 
+        <h2>Apply for a Position</h2> 
+        <form action="submit_application.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()"> 
+            <div class="form-group"> 
+                <label for="job_title">Applying For:</label> 
+                <select id="job_title" name="job_title" required> 
+                    <option value="" disabled selected>Select a Job</option> 
+                    <option value="Security Officer">Security Officer</option> 
+                    <option value="Site Supervisor">Site Supervisor</option> 
+                    <option value="Mobile Patrol Officer">Mobile Patrol Officer</option> 
+                    <option value="Surveillance System Technician">Surveillance System Technician</option> 
+                </select> 
+                <div class="error-message" id="job_title_error"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="name">Full Name:</label> 
+                <input type="text" id="name" name="name" required> 
+                <div class="error-message" id="name_error"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email" required> 
+                <div class="error-message" id="email_error"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="phone">Phone Number:</label> 
+                <input type="tel" id="phone" name="phone"> 
+                <div class="error-message" id="phone_error"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="cv">Upload CV (PDF or DOC):</label> 
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required> 
+                <div class="error-message" id="cv_error"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="cover_letter">Cover Letter:</label> 
+                <textarea id="cover_letter" name="cover_letter" rows="5"></textarea> 
+                <div class="error-message" id="cover_letter_error"></div> 
+            </div> 
+            <button type="submit">Submit Application</button> 
+        </form> 
+        <div class="links"> 
+            <a href="careers.html">Back to Careers</a> | <a href="index.html">Home</a> 
+        </div> 
+        <div class="success-message" id="success_message" style="display:none;">Application submitted successfully!</div> 
+    </div> 
+
+    <script> 
+        function validateForm() { 
+            let isValid = true; 
+            const nameInput = document.getElementById('name'); 
+            const emailInput = document.getElementById('email'); 
+            const cvInput = document.getElementById('cv'); 
+            const jobTitleSelect = document.getElementById('job_title'); 
+
+            const nameError = document.getElementById('name_error'); 
+            const emailError = document.getElementById('email_error'); 
+            const cvError = document.getElementById('cv_error'); 
+            const jobTitleError = document.getElementById('job_title_error'); 
+
+            nameError.textContent = ''; 
+            emailError.textContent = ''; 
+            cvError.textContent = ''; 
+            jobTitleError.textContent = ''; 
+
+            if (jobTitleSelect.value === "") { 
+                jobTitleError.textContent = 'Please select a job.'; 
+                isValid = false; 
+            } 
+
+            if (nameInput.value.trim() === "") { 
+                nameError.textContent = 'Please enter your full name.'; 
+                isValid = false; 
+            } 
+
+            if (emailInput.value.trim() === "") { 
+                emailError.textContent = 'Please enter your email address.'; 
+                isValid = false; 
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) { 
+                emailError.textContent = 'Please enter a valid email address.'; 
+                isValid = false; 
+            } 
+
+            if (cvInput.files.length === 0) { 
+                cvError.textContent = 'Please upload your CV.'; 
+                isValid = false; 
+            } 
+
+            return isValid; 
+        } 
+
+        const form = document.querySelector('form'); 
+        const successMessage = document.getElementById('success_message'); 
+
+        form.addEventListener('submit', function(event) { 
+            if (validateForm()) { 
+                event.preventDefault(); // Prevent actual submission for this example 
+                // In a real scenario, you would proceed with form submission here 
+
+                setTimeout(() => { 
+                    form.style.display = 'none'; 
+                    successMessage.style.display = 'block'; 
+                }, 1500); 
+            } 
+        }); 
+    </script> 
+</body> 
+</html>

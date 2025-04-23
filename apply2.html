@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application - Ntaganda Security Group Uganda</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #444;
+            padding-top: 110px;
+        }
+        header {
+            background-color: #004d80;
+            color: #fff;
+            padding: 1em 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.logo {
+            max-height: 120px;
+            margin-bottom: 10px;
+        }
+        header h1 {
+            margin: 0 15px;
+            font-size: 1.8em;
+            display: none;
+        }
+        .header-right {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .header-right button {
+            background-color: #336699;
+            color: #fff;
+            border: none;
+            padding: 0.8em 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .header-right button:hover {
+            background-color: #558abb;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #008000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #666;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="file"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+        }
+        button {
+            background-color: #336699;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #284b63;
+        }
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .links a {
+            margin: 0 10px;
+            color: #008000;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo">
+        <div class="header-right">
+            <button onclick="window.location.href='index.html'">Home</button>
+            <button onclick="window.location.href='careers.html'">Careers</button>
+            <button onclick="window.location.href='contact.html'">Contact Us</button>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Job Application</h2>
+        <form action="submit_apply2.php" method="post" enctype="multipart/form-data" onsubmit="return validateFormB()">
+            <div class="form-group">
+                <label for="applicant_name">Applicant Name:</label>
+                <input type="text" id="applicant_name" name="applicant_name" required>
+                <div class="error-message" id="applicant_name_error"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                <div class="error-message" id="phone_error"></div>
+            </div>
+            <div class="form-group">
+                <label for="cv">Upload CV (PDF or DOC):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                <div class="error-message" id="cv_error"></div>
+            </div>
+            <div class="form-group">
+                <label for="experience">Relevant Experience:</label>
+                <textarea id="experience" name="experience" rows="5"></textarea>
+                <div class="error-message" id="experience_error"></div>
+            </div>
+            <button type="submit">Submit Application</button>
+        </form>
+        <div class="links">
+            <a href="careers.html">Back to Careers</a> | <a href="index.html">Home</a>
+        </div>
+        <div class="success-message" id="success_message_b" style="display:none;">Application submitted successfully!</div>
+    </div>
+
+    <script>
+        function validateFormB() {
+            let isValid = true;
+            const applicantNameInput = document.getElementById('applicant_name');
+            const applicantNameError = document.getElementById('applicant_name_error');
+            const cvInput = document.getElementById('cv');
+            const cvError = document.getElementById('cv_error');
+            const experienceTextarea = document.getElementById('experience');
+            const experienceError = document.getElementById('experience_error');
+
+            applicantNameError.textContent = '';
+            cvError.textContent = '';
+            experienceError.textContent = '';
+
+            if (applicantNameInput.value.trim() === "") {
+                applicantNameError.textContent = 'Please enter your name.';
+                isValid = false;
+            }
+
+            if (cvInput.files.length === 0) {
+                cvError.textContent = 'Please upload your CV.';
+                isValid = false;
+            }
+
+            if (experienceTextarea.value.trim() === "") {
+                experienceError.textContent = 'Please describe your relevant experience.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        const formB = document.querySelector('form');
+        const successMessageB = document.getElementById('success_message_b');
+
+        formB.addEventListener('submit', function(event) {
+            if (validateFormB()) {
+                event.preventDefault();
+
+                setTimeout(() => {
+                    formB.style.display = 'none';
+                    successMessageB.style.display = 'block';
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>

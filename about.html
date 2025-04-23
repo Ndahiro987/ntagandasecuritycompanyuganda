@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ntaganda Security Group Uganda</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333;
+            line-height: 1.7;
+            background-image: url('security.jpg'); /* Add your background image here */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
+        }
+        header {
+            background-color: rgba(0, 77, 128, 0.7); /* Semi-transparent background */
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.logo {
+            max-height: 150px; /* Increased logo size */
+            margin-bottom: 0.5em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background-color: rgba(51, 102, 153, 0.7); /* Semi-transparent background */
+            color: #fff;
+            padding: 0.8em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.7em 1.2em;
+            margin: 0 0.6em;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+            display: inline-flex; /* Make them flex containers */
+            align-items: center; /* Vertically align items */
+            justify-content: center; /* Center text/icon horizontally */
+        }
+        nav a:hover {
+            background-color: #558abb;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-buttons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-buttons li {
+            margin-left: 0.6em;
+        }
+        .nav-buttons a {
+            /* Inherit styling from the general nav a */
+            background-color: transparent; /* Remove default button background */
+        }
+        .nav-buttons a:hover {
+            background-color: #558abb; /* Apply hover effect */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 30px;
+            background-color: #fff; /* Keep the container white for readability */
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .about-section {
+            padding: 40px 0;
+        }
+        .about-section h2 {
+            font-size: 2.3em;
+            margin-bottom: 1.2em;
+            text-align: center;
+            color: #004d80;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5em;
+            display: inline-block;
+        }
+        .about-section p {
+            margin-bottom: 1.2em;
+            color: #555;
+        }
+        .mission-vision {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .mission, .vision {
+            width: 45%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #d9d9d9;
+        }
+        .mission h3, .vision h3 {
+            font-size: 1.6em;
+            color: #004d80;
+            margin-bottom: 0.8em;
+            text-align: center;
+        }
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+            color: #fff;
+            text-align: center;
+            padding: 1.2em 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp green */
+            color: #fff;
+            padding: 0.7em 1.2em;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Darker WhatsApp green */
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5em;
+            fill: #fff; /* Optional: style the SVG icon */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo">
+        <h1>Ntaganda Security Group Uganda</h1>
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <ul class="nav-buttons">
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="payments.html">Payments</a></li>
+            <li><a href="login_signup.html">Login/Sign Up</a></li>
+            <li>
+                <a href="https://wa.me/256762052069" class="whatsapp-button" target="_blank">
+                    <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27.34 4.66a11.96 11.96 0 0 0-8.62-3.48c-6.58 0-11.9 5.32-11.9 11.9 0 2.09.52 4.08 1.45 5.84l-1.57 4.68 4.76-1.55c1.65.85 3.46 1.3 5.32 1.3 6.58 0 11.9-5.32 11.9-11.9a11.96 11.96 0 0 0-3.34-8.64zm-8.62 19.34c-1.88 0-3.68-.48-5.2-1.35l-.32-.19-3.18 1.04 1.06-3.12-.22-.34c-.94-1.5-1.44-3.2-1.44-5.06 0-5.46 4.44-9.9 9.9-9.9a9.9 9.9 0 0 1 6.9 2.9c1.9 1.9 2.96 4.44 2.96 6.9a9.9 9.9 0 0 1-2.9 6.9c-1.9 1.9-4.44 2.9-6.9 2.9zm5.34-6.52c-.32-.19-1.84-.94-2.12-1.04-.28-.1-.56-.16-.84-.16-.28 0-.56 0-.84.06-.28.06-.56.28-.84.56-.28.28-.56.56-.84.74-.28.19-.56.28-.84.28-.28 0-.56-.1-.84-.38-.28-.28-.56-.56-.74-.84-.19-.28-.06-.56.1-.84.16-.28.28-.56.62-.84.32-.28.44-.56.56-.84.1-.28.1-.56 0-.84-.1-.28-.44-.62-.68-.84-.28-.28-.56-.56-.84-.56-.28 0-.56.06-.84.06-.28 0-.56.16-.84.44-.28.28-.56.62-.74.84-.19.28-.44.56-.28.84.16.28.62 1.04.84 1.22.22.19 1.5.84 1.94 1.12.44.28.84.56 1.22.62.38.06.74.06 1.02-.1.28-.16.62-.38.84-.56.22-.19.44-.28.68-.28.22 0 .56.06.84.28.28.22.44.56.62.84.19.28.28.56.38.84.1.28.1.56.06.84-.06.28-.28.56-.56.74-.28.19-1.5.84-2.06 1.12z"/></svg>
+                    WhatsApp
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section class="about-section">
+            <h2>Our Story</h2>
+            <p>Welcome to Ntaganda Security Group, a dedicated team committed to providing top-tier security solutions across Uganda. Founded on the principles of trust, integrity, and unwavering protection, we understand the unique security landscape of our nation and strive to offer services that are both effective and tailored to your specific needs.</p>
+            <p>Our journey began with a vision to create a safer environment for businesses, individuals, and communities. With years of combined experience in law enforcement, security management, and risk assessment, our leadership team has built a company that prioritizes professionalism and client satisfaction.</p>
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To deliver exceptional security services that exceed expectations, ensuring the safety and peace of mind of our clients through proactive measures, highly trained personnel, and advanced technology.</p>
+                </div>
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>To be the leading and most trusted security provider in Uganda, recognized for our reliability, innovation, and commitment to safeguarding our nation.</p>
+                </div>
+            </div>
+            <p>At Ntaganda Security Group, we believe in building strong, lasting relationships with our clients. We take the time to understand your unique security concerns and develop customized strategies to address them effectively. Our commitment extends beyond just providing security; we aim to be a partner you can rely on.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ntaganda Security Group Uganda. All rights reserved.</p>
+    </footer>
+</body>
+</html>

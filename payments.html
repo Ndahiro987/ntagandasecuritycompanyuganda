@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments - Ntaganda Security Group Uganda</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004d80;
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.logo {
+            max-height: 100px;
+            margin-bottom: 0.5em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            background-color: #336699;
+            color: #fff;
+            padding: 0.8em 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.7em 1.2em;
+            margin: 0 0.6em;
+            border-radius: 7px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #558abb;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        h2 {
+            color: #004d80;
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5em;
+            display: inline-block;
+            width: 80%;
+        }
+        .payment-form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .payment-methods label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        button[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.2em 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+        }
+        /* WhatsApp Button Styles (for consistency) */
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp green */
+            color: #fff;
+            padding: 0.7em 1.2em;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Darker WhatsApp green */
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5em;
+            fill: #fff; /* Optional: style the SVG icon */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo">
+        <h1>Ntaganda Security Group Uganda</h1>
+    </header>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Payment Information</h2>
+        <form class="payment-form">
+            <div class="form-group">
+                <label for="customerName">Full Name</label>
+                <input type="text" id="customerName" name="customerName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber">
+            </div>
+            <div class="form-group">
+                <label for="serviceType">Service Type</label>
+                <select id="serviceType" name="serviceType">
+                    <option value="">-- Select a Service --</option>
+                    <option value="guarding">Guarding Services</option>
+                    <option value="mobilePatrols">Mobile Patrols</option>
+                    <option value="surveillance">Surveillance Systems</option>
+                    <option value="physicalSecurity">Physical Security</option>
+                    <option value="emergencyResponse">Emergency Response</option>
+                    <option value="canineSecurity">Canine Security</option>
+                    <option value="alarmsSecurity">Alarms & Security</option>
+                    <option value="trackingServices">Tracking Services</option>
+                    <option value="facilitiesManagement">Facilities Management</option>
+                    <option value="crisisManagement">Crisis Management</option>
+                    <option value="consultingServices">Consulting Services</option>
+                    <option value="travelSecurity">Travel Security</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount (UGX)</label>
+                <input type="number" id="amount" name="amount" min="1" required>
+            </div>
+            <div class="payment-methods">
+                <p>Select Payment Method:</p>
+                <label>
+                    <input type="radio" name="paymentMethod" value="mobileMoney"> Mobile Money
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="bankTransfer"> Bank Transfer
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="creditCard" disabled> Credit Card (Coming Soon)
+                </label>
+            </div>
+            <button type="submit">Submit Payment</button>
+        </form>
+        <a href="index.html" class="back-link">Back to Home</a>
+        <a href="about.html" class="back-link">About Us</a>
+        <a href="services.html" class="back-link">Our Services</a>
+        <a href="gallery.html" class="back-link">View Gallery</a>
+        <a href="contact.html" class="back-link">Contact Us</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ntaganda Security Group Uganda. All rights reserved.</p>
+    </footer>
+</body>
+</html>

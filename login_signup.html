@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up - Ntaganda Security Group Uganda</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004d80;
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.logo {
+            max-height: 100px; /* Adjusted logo size for auth page */
+            margin-bottom: 0.5em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            margin-bottom: 10px; /* Add some space below the title */
+        }
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px; /* Add some space below the buttons */
+        }
+        .header-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .header-button:hover {
+            background-color: #0056b3;
+        }
+        .auth-container {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        .auth-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #004d80;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .link-switch {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+        }
+        .link-switch p {
+            margin-bottom: 10px;
+        }
+        .link-switch a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link-switch a:hover {
+            text-decoration: underline;
+        }
+        #signup-form {
+            display: none;
+        }
+        .otp-section {
+            display: none;
+            margin-top: 20px;
+            border-top: 1px solid #d9d9d9;
+            padding-top: 20px;
+        }
+        #otp-message {
+            text-align: center;
+            margin-bottom: 15px;
+            color: green;
+            font-weight: bold;
+        }
+        .switch-button {
+            background-color: transparent;
+            color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .switch-button:hover {
+            color: #0056b3;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            text-decoration: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Ntaganda Security Group Logo" class="logo">
+        <h1>Ntaganda Security Group Uganda</h1>
+        <div class="header-buttons">
+            <a href="index.html" class="header-button">Home</a>
+            <a href="services.html" class="header-button">Services</a>
+
+        </div>
+    </header>
+    <div class="auth-container">
+        <h2 id="auth-title">Log In</h2>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login_username">Username or Email</label>
+                <input type="text" id="login_username" name="login_username" required>
+            </div>
+            <div class="form-group">
+                <label for="login_password">Password</label>
+                <input type="password" id="login_password" name="login_password" required>
+            </div>
+            <button type="submit" class="button">Log In</button>
+            <div class="link-switch">
+                <button type="button" class="switch-button" onclick="showSignUp()">Don't have an account? Sign Up</button>
+            </div>
+        </form>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="signup_name">Full Name</label>
+                <input type="text" id="signup_name" name="signup_name" required>
+            </div>
+            <div class="form-group">
+                <label for="signup_email">Email Address</label>
+                <input type="email" id="signup_email" name="signup_email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup_phone">Phone Number</label>
+                <input type="tel" id="signup_phone" name="signup_phone" required>
+            </div>
+            <div class="form-group">
+                <label for="signup_password">Password</label>
+                <input type="password" id="signup_password" name="signup_password" required>
+            </div>
+            <div class="form-group">
+                <label for="signup_confirm_password">Confirm Password</label>
+                <input type="password" id="signup_confirm_password" name="signup_confirm_password" required>
+            </div>
+            <button type="submit" class="button" id="signup-button">Sign Up & Get OTP</button>
+            <div class="link-switch">
+                <button type="button" class="switch-button" onclick="showLogin()">Already have an account? Log In</button>
+            </div>
+        </form>
+
+        <div id="otp-section" class="otp-section">
+            <p id="otp-message">OTP sent to your phone number. Please enter it below to verify.</p>
+            <div class="form-group">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" name="otp" required>
+            </div>
+            <button type="button" class="button" id="verify-button">Verify OTP</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Ntaganda Security Group Uganda. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="whatsapp-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp"><path d="M19 7c2.5 0 4.5 2 4.5 4.5S21.5 16 19 16h-2.3l-.7 2.3c-.3.9-1.3 1.6-2.3 1.6-.6 0-1.2-.2-1.7-.5l-6.3-3.1c-2.2-1.1-3.8-3.3-3.8-5.8S5.5 7 8 7h2.3l.7-2.3c.3-.9 1.3-1.6 2.3-1.6.6 0 1.2.2 1.7.5l6.3 3.1z"/><path d="M7 12c0 1.7 1.3 3 3 3s3-1.3 3-3-1.3-3-3-3-3 1.3-3 3z"/><path d="M14 12c0 1.7 1.3 3 3 3s3-1.3 3-3-1.3-3-3-3-3 1.3-3 3z"/></svg>
+    </a>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const authTitle = document.getElementById('auth-title');
+        const otpSection = document.getElementById('otp-section');
+        const signupButton = document.getElementById('signup-button');
+        const verifyButton = document.getElementById('verify-button');
+
+        function showSignUp() {
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'block';
+            authTitle.textContent = 'Sign Up';
+            otpSection.style.display = 'none'; // Ensure OTP section is hidden when switching
+        }
+
+        function showLogin() {
+            loginForm.style.display = 'block';
+            signupForm.style.display = 'none';
+            authTitle.textContent = 'Log In';
+            otpSection.style.display = 'none'; // Ensure OTP section is hidden when switching
+        }
+
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            // In a real application, you would send the signup data to the server
+            // and handle the OTP generation and sending.
+
+            // For this example, simulate showing the OTP section
+            document.getElementById('otp-section').style.display = 'block';
+            authTitle.textContent = 'Verify OTP';
+            signupForm.style.display = 'none';
+        });
+
+        verifyButton.addEventListener('click', function() {
+            // In a real application, you would send the entered OTP to the server
+            // for verification and complete the signup process.
+
+            // For this example, simulate a successful verification
+            alert('OTP Verified! Registration successful (in a real scenario).');
+            window.location.href = 'login.html'; // Redirect to login page after successful "verification"
+        });
+
+        // Initial state: Show login form
+        showLogin();
+    </script>
+</body>
+</html>
